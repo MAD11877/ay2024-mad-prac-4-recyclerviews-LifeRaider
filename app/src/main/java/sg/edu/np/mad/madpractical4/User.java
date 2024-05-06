@@ -5,6 +5,17 @@ public class User {
     public String description;
     public int id;
     public boolean followed;
+
+    public void setName(String username) {this.name = username;}
+    public void setDescription(String description) {this.description = description;}
+    public void setId(int id) {this.id = id;}
+    public void setFollowed(Boolean followed) {this.followed = followed;}
+    public String getName() {return name;}
+    public String getDescription() {return description;}
+    public int setId() {return id;}
+    public Boolean getFollowed() {return followed;}
+
+
     public User(String name, String description, int id, boolean followed) {
         this.name = name;
         this.description = description;

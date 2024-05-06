@@ -41,12 +41,15 @@ public class MainActivity extends AppCompatActivity {
         Button btnMsg = findViewById(R.id.button2);
 
         // Retrieve the integer value from the Intent
-        int ranInt = getIntent().getIntExtra("ranInt", 999999);
+        Bundle bundle = getIntent().getExtras();
+        String name = bundle.getString("Name");
+        String description = bundle.getString("Description");
+        Boolean followed = bundle.getBoolean("Followed");
 
         // Set the TextViews with the User's name, description and default button message
-        tvName.setText(user.name + " " + ranInt);
-        tvDescription.setText(user.description);
-        if (user.followed){
+        tvName.setText(name);
+        tvDescription.setText(description);
+        if (followed){
             btnFollow.setText("Unfollow");
         } else {
             btnFollow.setText("Follow");
