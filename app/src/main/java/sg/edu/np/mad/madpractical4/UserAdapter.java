@@ -64,6 +64,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
                 Log.i(TAG, "Alert created");
             }
         });
+        //Check if the last digit of the name is 7
+        String name = list_items.getName();
+        if (name.charAt(name.length()-1) == '7'){
+            holder.bigImage.setVisibility(View.VISIBLE);
+        } else {
+            holder.bigImage.setVisibility(View.GONE);
+        }
     }
 
     public int getItemCount() {return list_objects.size();}
